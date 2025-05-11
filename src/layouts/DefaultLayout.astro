@@ -1,4 +1,6 @@
 ---
+import { SEO } from 'astro-seo'
+import avatar from '~/assets/avatar.gif'
 import Footer from './default/Footer.astro'
 import Header from './default/Header.astro'
 import '@unocss/reset/tailwind.css'
@@ -17,7 +19,16 @@ const { title = 'Syomei Aoshima' } = Astro.props
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="generator" content={Astro.generator} />
   <link rel="icon" href="/favicon.png" />
-  <title>{title}</title>
+  <SEO
+    {title}
+    description="asyomei personal website"
+    openGraph={{ basic: {
+      title,
+      type: 'website',
+      image: new URL(avatar.src, 'https://asyomei.org').toString(),
+      url: 'https://asyomei.org',
+    } }}
+  />
 </head>
 
 <body class="min-h-screen flex flex-col items-center bg-base text-md text-primary leading-4 font-mono">
