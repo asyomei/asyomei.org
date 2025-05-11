@@ -19,10 +19,5 @@ export default defineConfig({
       primary: 'var(--text-primary)',
       secondary: 'var(--text-secondary)',
     },
-    fontSize: {
-      sm: '10px',
-      md: '14px',
-      lg: '20px',
-    },
   },
 })
