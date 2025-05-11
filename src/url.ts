@@ -5,10 +5,8 @@ export const url = {
       telegram: 'https://t.me/asyomei',
       bluesky: 'https://bsky.app/asyomei.org',
       shiki: 'https://shikimori.one/asyomei',
-      vk: 'https://vk.com/asyomei',
       github: 'https://github.com/asyomei',
       lastfm: 'https://last.fm/user/asyomei',
-      fourpda: 'https://4pda.to/forum/index.php?showuser=8079654',
     },
     projects: {
       'asyomei-org': 'https://github.com/asyomei/asyomei.org',
