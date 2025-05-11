@@ -7,6 +7,9 @@ export default defineConfig({
   transformers: [
     transformerDirectives(),
   ],
+  shortcuts: {
+    table: 'grid grid-cols-[1fr_2fr] sm:grid-cols-[1fr_4fr]',
+  },
   theme: {
     backgroundColor: {
       base: 'var(--bg)',
