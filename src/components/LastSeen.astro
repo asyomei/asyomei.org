@@ -1,0 +1,29 @@
+---
+import type { LastSeenItem } from '~/backend/last-seen/types'
+import { getAbsDate, getRelDate } from '~/utils/date'
+import A from './A.astro'
+
+interface Props {
+  data: LastSeenItem[]
+}
+
+const { data } = Astro.props
+---
+
+<div class="flex flex-col gap-2 whitespace-nowrap">
+  {data.map(({ content, service, suffix, date }) => {
+    const [absDate, relDate] = [getAbsDate(date), getRelDate(date)]
+    return (
+      <div>
+        <p class="flex">
+          <A href={content.url} class="truncate">{content.text}</A>
+          {suffix && <span>: {suffix}</span>}
+        </p>
+        <p class="text-secondary">
+          @ <A href={service.url}>{service.name}</A>,
+          <span title={absDate}>{relDate ?? absDate}</span>
+        </p>
+      </div>
+    )
+  })}
+</div>

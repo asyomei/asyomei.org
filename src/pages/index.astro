@@ -1,8 +1,12 @@
 ---
+import { fetchLastSeen } from '~/backend/last-seen'
 import A from '~/components/A.astro'
+import LastSeen from '~/components/LastSeen.astro'
 import Profile from '~/components/ui/Profile.astro'
 import Section from '~/components/ui/Section.astro'
 import DefaultLayout from '~/layouts/DefaultLayout.astro'
+
+const lastSeenData = await fetchLastSeen()
 ---
 
 <DefaultLayout>
@@ -46,6 +50,12 @@ import DefaultLayout from '~/layouts/DefaultLayout.astro'
     </div>
     <p>somewhere else...</p>
   </Section>
+
+  {lastSeenData.length > 0 && (
+    <Section title="last seen">
+      <LastSeen data={lastSeenData} />
+    </Section>
+  )}
 
   <Section title="some useless links">
     <div class="table">
