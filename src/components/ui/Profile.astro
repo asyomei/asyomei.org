@@ -1,0 +1,13 @@
+---
+import { Image } from 'astro:assets'
+import avatar from '~/assets/avatar.gif'
+import A from '../A.astro'
+---
+
+<div class="flex items-center gap-6 border p-2 px-2 sm:gap-8 sm:px-6">
+  <Image src={avatar} alt="avatar" title="Nyaa~" width={80} class="rounded-25%" />
+  <section class="mb-2">
+    <p class="text-xl font-bold">Syomei Aoshima</p>
+    <p><A href="//my/nickname">@asyomei</A> • Vadim</p>
+  </section>
+</div>

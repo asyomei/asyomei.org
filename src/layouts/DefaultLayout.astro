@@ -1,0 +1,58 @@
+---
+import Footer from './default/Footer.astro'
+import Header from './default/Header.astro'
+import '@unocss/reset/tailwind.css'
+
+interface Props {
+  title?: string
+}
+
+const { title = 'Syomei Aoshima' } = Astro.props
+---
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  <link rel="icon" href="/favicon.png" />
+  <title>{title}</title>
+</head>
+
+<body class="min-h-screen flex flex-col items-center bg-base text-md text-primary leading-4 font-mono">
+  <div class="min-h-screen w-full flex flex-col gap-6 p-6 md:w-720px">
+    <Header />
+    <slot />
+    <div class="flex-1"><!-- placeholder for footer --></div>
+    <Footer />
+  </div>
+</body>
+
+</html>
+
+<style is:global>
+  :root {
+    --bg: white;
+    --text-accent: #8839ef;
+    --text-primary: #3e1a6e;
+    --text-secondary: #7c7f93;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #241c1e;
+      --text-accent: #cba6f7;
+      --text-primary: #f5c2e7;
+      --text-secondary: #9399b2;
+    }
+  }
+
+  * {
+    @apply box-border border-primary;
+  }
+
+  a {
+    @apply text-accent hover:underline;
+  }
+</style>

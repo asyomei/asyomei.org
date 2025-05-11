@@ -1,0 +1,31 @@
+{
+  "name": "asyomei.org",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.10.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "astro check",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/node": "^9.2.1",
+    "@unocss/reset": "^66.1.1",
+    "astro": "^5.7.12",
+    "astro-seo": "^0.8.4",
+    "lightningcss": "^1.30.0",
+    "unocss": "^66.1.1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.13.0",
+    "@astrojs/check": "^0.9.4",
+    "@unocss/eslint-plugin": "^66.1.1",
+    "eslint": "^9.26.0",
+    "eslint-plugin-astro": "^1.3.1",
+    "type-fest": "^4.41.0"
+  }
+}
