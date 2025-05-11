@@ -6,16 +6,13 @@ const API_URL = 'https://api.github.com/users/%s/events/public?per_page=1'
 const Event = z.object({
   type: z.string(),
   payload: z.any(),
-  repo: z.object({
-    name: z.string(),
-    url: z.string(),
-  }),
+  repo: z.object({ name: z.string() }),
   created_at: z.coerce.date(),
 })
   .transform(x => ({
     description: getDescription(x.type, x.payload),
     repo: x.repo.name,
-    url: new URL(x.repo.url, 'https://github.com').toString(),
+    url: new URL(x.repo.name, 'https://github.com').toString(),
     date: x.created_at,
   }))
 
