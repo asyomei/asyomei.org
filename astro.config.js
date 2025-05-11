@@ -9,6 +9,9 @@ export default defineConfig({
   build: { inlineStylesheets: 'never' },
   image: { service: passthroughImageService() },
   vite: {
+    ssr: {
+      noExternal: import.meta.env.PROD || undefined,
+    },
     build: {
       cssMinify: 'lightningcss',
     },
