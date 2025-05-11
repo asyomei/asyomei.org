@@ -1,4 +1,5 @@
 ---
+import A from '~/components/A.astro'
 import Profile from '~/components/ui/Profile.astro'
 import DefaultLayout from '~/layouts/DefaultLayout.astro';
 ---
@@ -9,4 +10,26 @@ import DefaultLayout from '~/layouts/DefaultLayout.astro';
   </section>
 
   <section>Hello World!</section>
+
+  <section>
+    <b>——— a little information about me ———</b>
+    <div class="mt-2 table">
+      <b>birthday</b>
+      <p>February 09</p>
+
+      <b>languages</b>
+      <p>ru, en</p>
+
+      <b>fav flower</b>
+      <p>sunflower</p>
+
+      <b>fav anime</b>
+      <p>
+        gochiusa (<A href="//gochiusa/shiki">shiki</A>/<A href="//gochiusa/anilist">anilist</A>)
+      </p>
+
+      <b>fav music</b>
+      <p>mainly rock/metal, check <A href="//my/profiles/lastfm">lastfm</A></p>
+    </div>
+  </section>
 </DefaultLayout>
