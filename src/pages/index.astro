@@ -1,19 +1,19 @@
 ---
 import A from '~/components/A.astro'
 import Profile from '~/components/ui/Profile.astro'
-import DefaultLayout from '~/layouts/DefaultLayout.astro';
+import Section from '~/components/ui/Section.astro'
+import DefaultLayout from '~/layouts/DefaultLayout.astro'
 ---
 
 <DefaultLayout>
-  <section>
+  <Section>
     <Profile />
-  </section>
+  </Section>
 
-  <section>Hello World!</section>
+  <Section>Hello World!</Section>
 
-  <section>
-    <b>——— a little information about me ———</b>
-    <div class="mt-2 table">
+  <Section title="a little information about me">
+    <div class="table">
       <b>birthday</b>
       <p>February 09</p>
 
@@ -31,11 +31,10 @@ import DefaultLayout from '~/layouts/DefaultLayout.astro';
       <b>fav music</b>
       <p>mainly rock/metal, check <A href="//my/profiles/lastfm">lastfm</A></p>
     </div>
-  </section>
+  </Section>
 
-  <section>
-    <b>——— where do i exist? ———</b>
-    <div class="my-2 table">
+  <Section title="where do i exist?">
+    <div class="mb-2 table">
       <b>telegram</b>
       <p><A href="//my/profiles/telegram">@asyomei</A></p>
 
@@ -46,13 +45,12 @@ import DefaultLayout from '~/layouts/DefaultLayout.astro';
       <p><A href="//my/profiles/github">@asyomei</A></p>
     </div>
     <p>somewhere else...</p>
-  </section>
+  </Section>
 
-  <section>
-    <b>——— some useless links ———</b>
-    <div class="mt-2 table">
+  <Section title="some useless links">
+    <div class="table">
       <p><A href="//ayaya10hVideo">ayaya 10h</A></p>
       <p>why not</p>
     </div>
-  </section>
+  </Section>
 </DefaultLayout>
